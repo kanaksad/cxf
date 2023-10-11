@@ -163,16 +163,16 @@
         <url>https://www.apache.org/</url>
     </organization>
     <modules>
-        <module>bom</module>
-        <module>parent</module>
+<!--        <module>bom</module>-->
+<!--        <module>parent</module>-->
         <module>core</module>
-        <module>tools</module>
-        <module>testutils</module>
-        <module>rt</module>
-        <module>integration</module>
-        <module>maven-plugins</module>
-        <module>services</module>
-        <module>systests</module>
+<!--        <module>tools</module>-->
+<!--        <module>testutils</module>-->
+<!--        <module>rt</module>-->
+<!--        <module>integration</module>-->
+<!--        <module>maven-plugins</module>-->
+<!--        <module>services</module>-->
+<!--        <module>systests</module>-->
     </modules>
     <profiles>
         <profile>
@@ -194,20 +194,20 @@
                             </compilerArguments>
                             <annotationProcessorPaths>
                                 <path>
-                                    <groupId>edu.ucr.cs.riple.taint</groupId>
-                                    <artifactId>ucrtainting-checker</artifactId>
-                                    <version>0.1</version>
+                                    <groupId>org.checkerframework</groupId>
+                                    <artifactId>checker</artifactId>
+                                    <version>3.38.0</version>
                                 </path>
                             </annotationProcessorPaths>
                             <annotationProcessors>
                                 <!-- Add all the checkers you want to enable here -->
-                                <annotationProcessor>edu.ucr.cs.riple.taint.ucrtainting.UCRTaintingChecker</annotationProcessor>
+                                <annotationProcessor>org.checkerframework.checker.tainting.TaintingChecker</annotationProcessor>
                             </annotationProcessors>
                             <compilerArgs>
-                                <arg>-AannotatedPackages=com.test</arg>
-                                <arg>-AenableValidationCheck=false</arg>
-                                <arg>-AenableLibraryCheck=false</arg>
-                                <arg>-AenableSanitizationCheck=false</arg>
+<!--                                <arg>-Astubs="/Users/kknock/RIPLE/taint/summer/stubs/"</arg>-->
+<!--                                <arg>-AenableValidationCheck=false</arg>-->
+<!--                                <arg>-AenableLibraryCheck</arg>-->
+<!--                                <arg>-AenableSanitizationCheck=false</arg>-->
                                 <!-- <arg>-Awarns</arg> --> <!-- -Awarns turns type-checking errors into warnings. -->
                             </compilerArgs>
                         </configuration>
@@ -218,7 +218,7 @@
                 <dependency>
                     <groupId>org.checkerframework</groupId>
                     <artifactId>checker</artifactId>
-                    <version>3.35.0</version>
+                    <version>3.38.0</version>
                 </dependency>
             </dependencies>
         </profile>
